@@ -11,7 +11,17 @@ def index():
         return render_template('index.html', hostname=host_name, ip=host_ip)
     except:
         return render_template('error.html')
+@app.route("/monitor.htm")
+def monitor():
+    return "0"
 
+@app.route("/status")
+def status():
+    return "Processing"
+
+@app.route("/query")
+def query():
+    return "{ \"id\": \"2345\", \"name\"=\"Rajiv\" }"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
