@@ -23,22 +23,22 @@ def status():
     if(isValidRequest == True):
         request.headers.get('your-header-name')
         response = dict()
-        response.status = "Processing"
-        response.searchId = "23456789"
+        response['status'] = "Processing"
+        response['searchId'] = "23456789"
         return json.dumps(response)
     else:
         response = dict()
-        response.status = "Invalid Auth Token"
+        response['status'] = "Invalid Auth Token"
         return json.dumps(response)
 
 
 @app.route("/query")
 def query():
     response = dict()
-    response.id = 2345
-    response.name = "Rajiv Chaudhary"
-    response.team = "Cloud Extender Platform"
-    response.role = "Tech Lead"
+    response['id'] = 2345
+    response['name'] = "Rajiv Chaudhary"
+    response['team'] = "Cloud Extender Platform"
+    response['role'] = "Tech Lead"
     return json.dumps(response)
 
 def _validate_token():
