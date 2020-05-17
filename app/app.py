@@ -35,10 +35,15 @@ def status():
 @app.route("/query")
 def query():
     response = dict()
-    response['id'] = 2345
-    response['name'] = "Rajiv Chaudhary"
-    response['team'] = "Cloud Extender Platform"
-    response['role'] = "Tech Lead"
+    isValidRequest = _validate_token()
+    if (isValidRequest == True):
+        response['status'] = "Success"
+        response['id'] = 2345
+        response['name'] = "Rajiv Chaudhary"
+        response['team'] = "Cloud Extender Platform"
+        response['role'] = "Tech Lead"
+    else:
+        response['status'] = "Invalid Auth Token"
     return json.dumps(response)
 
 def _validate_token():
