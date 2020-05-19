@@ -1,8 +1,10 @@
-from flask import Flask,render_template,request
+from flask import Flask, render_template, request
 import socket
 import json
+import base64
 
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -12,43 +14,53 @@ def index():
         return render_template('index.html', hostname=host_name, ip=host_ip)
     except:
         return render_template('error.html')
+
+
 @app.route("/monitor.htm")
 def monitor():
     return "0"
 
-@app.route("/status")
-def status():
+
+@app.route("/results/<search_id>")
+def results(search_id):
     headers = request.headers
-    isValidRequest = _validate_token()
-    if(isValidRequest == True):
-        request.headers.get('your-header-name')
-        response = dict()
-        response['status'] = "Processing"
-        response['searchId'] = "23456789"
-        return json.dumps(response)
+    print(search_id)
+    is_valid_request = _validate_token()
+    response = dict()
+    if is_valid_request is True:
+        device_1 = {'deviceId': 'iPhone', 'risk_score': '9', 'last_reported': '20-May-2020'};
+        device_2 = {'deviceId': 'Android phone', 'risk_score': '6', 'last_reported': '22-May-2020'}
+        device_list = [device_1, device_2]
+        response['status'] = "Success"
+        response['searchId'] = search_id
+        response['results'] = device_list
     else:
-        response = dict()
-        response['status'] = "Invalid Auth Token"
-        return json.dumps(response)
+        response['status'] = "Failure"
+        response['errmsg'] = "Invalid Auth Token"
+        response['searchId'] = search_id
+    return json.dumps(response)
 
 
-@app.route("/query")
+@app.route("/query", methods = ['POST'])
 def query():
     response = dict()
-    isValidRequest = _validate_token()
-    if (isValidRequest == True):
+    is_valid_request = _validate_token()
+    query_expression = request.data
+    search_id = base64.b64encode(query_expression).decode()
+
+    if is_valid_request is True:
         response['status'] = "Success"
-        response['id'] = 2345
-        response['name'] = "Rajiv Chaudhary"
-        response['team'] = "Cloud Extender Platform"
-        response['role'] = "Tech Lead"
+        response['errmsg'] = ""
+        response['search_id'] = search_id
     else:
-        response['status'] = "Invalid Auth Token"
+        response['status'] = "Failure"
+        response['errmsg'] = "Invalid Auth Token"
     return json.dumps(response)
+
 
 def _validate_token():
     token = request.headers['X-Auth-Token']
-    if(token == 'BDFSXK-EVDKESD-DHDJDB-DSKANS'):
+    if token == 'BDFSXK-EVDKESD-DHDJDB-DSKANS':
         return True
     return False
 
