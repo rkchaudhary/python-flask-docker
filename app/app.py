@@ -16,12 +16,12 @@ def index():
         return render_template('error.html')
 
 
-@app.route("/monitor.htm")
+@app.route("/api/monitor.htm")
 def monitor():
     return "0"
 
 
-@app.route("/results/<search_id>")
+@app.route("/api/results/<search_id>")
 def results(search_id):
     headers = request.headers
     print(search_id)
@@ -41,7 +41,7 @@ def results(search_id):
     return json.dumps(response)
 
 
-@app.route("/query", methods = ['POST'])
+@app.route("/api/query", methods = ['POST'])
 def query():
     response = dict()
     is_valid_request = _validate_token()
