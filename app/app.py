@@ -32,11 +32,13 @@ def results(search_id):
         device_2 = {'deviceId': 'Android phone', 'risk_score': '6', 'last_reported': '22-May-2020'}
         device_list = [device_1, device_2]
         response['status'] = "Success"
+        response['code'] = 200
         response['searchId'] = search_id
-        response['results'] = device_list
+        response['data'] = device_list
     else:
         response['status'] = "Failure"
         response['errmsg'] = "Invalid Auth Token"
+        response['code'] = 401
         response['searchId'] = search_id
     return json.dumps(response)
 
@@ -50,11 +52,13 @@ def query():
 
     if is_valid_request is True:
         response['status'] = "Success"
+        response['code'] = 200
         response['errmsg'] = ""
         response['search_id'] = search_id
     else:
         response['status'] = "Failure"
         response['errmsg'] = "Invalid Auth Token"
+        response['code'] = 401
     return json.dumps(response)
 
 
