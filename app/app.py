@@ -18,7 +18,10 @@ def index():
 
 @app.route("/api/monitor.htm")
 def monitor():
-    return "0"
+    response = dict()
+    response['status'] = "Success"
+    response['code'] = 200
+    return json.dumps(response)
 
 
 @app.route("/api/results/<search_id>")
