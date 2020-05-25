@@ -30,31 +30,44 @@ def results(search_id):
     response = dict()
     if is_valid_request is True:
         device_1 = {'fl_user_id': 'rkchaudhary', 'fl_email_add': 'rkchaudhary@ibm.com',
-                    'fl_device_id': 'ApplF2LV13JPHFM2', 'fl_device_platform': 'iOS'};
+                    'fl_device_id': 'ApplF2LV13JPHFM2', 'fl_device_platform': 'iOS',
+                    'first_observed':'2019-12-04T09:37:54.6939357Z','last_observed':'2019-12-04T09:37:54.6939357Z' };
         device_2 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_3 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_4 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_5 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_6 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_7 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_8 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_9 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                    'fl_device_platform': 'iOS'};
+                    'fl_device_platform': 'iOS',
+                    'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_10 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                     'fl_device_platform': 'iOS'};
+                     'fl_device_platform': 'iOS',
+                     'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_11 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                     'fl_device_platform': 'iOS'};
+                     'fl_device_platform': 'iOS',
+                     'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_12 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                     'fl_device_platform': 'iOS'};
+                     'fl_device_platform': 'iOS',
+                     'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
         device_13 = {'fl_user_id': 'vikas', 'fl_email_add': 'vikas.kumar1@ibm.com', 'fl_device_id': 'ApplF2L12345634',
-                     'fl_device_platform': 'iOS'};
+                     'fl_device_platform': 'iOS',
+                     'first_observed': '2019-12-04T09:37:54.6939357Z', 'last_observed': '2019-12-04T09:37:54.6939357Z'};
 
         device_list = [device_1, device_2, device_3, device_4, device_5, device_6, device_7, device_8, device_9,
                        device_10, device_11,
